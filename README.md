@@ -3,14 +3,7 @@ Class for work with data in java
 
 In Java, we play a lot with Dates. Here’s one more scenario. You have a string which has date in it. You want to convert it into a valid java.util.Date object. Now in Java you can convert a String to Date using SimpleDateFormat class. But we will add a little more complexity on that. Lets say the date format in String is not fixed. User might enter date in format “dd/mm/yyy” or “dd-mm-yyyy” or “dd.mmm.yy”! In any of such case we should get a valid java.util.Date object. Here’s a simple Util class that you can use to convert String having date in multiple formats to java.util.Date object.
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-
 public class DateUtil {
-
 	// List of all date formats that we want to parse.
 	// Add your own format here.
 	private static List<SimpleDateFormat>; 
@@ -56,7 +49,6 @@ public class DateUtil {
 The above code has a list of SimpleDateFormat objects that holds different valid date formats that you want to parse. Add a new format if you want your code to parse it. Also check the convertToDate() method. It runs through each format from the list and check weather input string is valid date or not. If it is successful in converting String to Date, it returns the Date object. If it fails to convert String to Date then it returns null. Let’s test this with various input:
 
 public class TestDateUtil {
-
 	public static void main(String[] args) {
 		System.out.println("10/14/2012" + " = " + DateUtil.convertToDate("10/14/2012"));
 		System.out.println("10-Jan-2012" + " = " + DateUtil.convertToDate("10-Jan-2012"));
